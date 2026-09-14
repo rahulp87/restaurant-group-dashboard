@@ -460,8 +460,10 @@ with tab_trends:
         fig.add_trace(go.Scatter(x=by_date_all["date"], y=by_date_all["dinner_net"], name="Dinner",
                                   mode="lines", line=dict(color=C_DINNER, width=2),
                                   fill="tozeroy", fillcolor="rgba(235,104,52,0.10)"))
-        fig.update_layout(title="Net sales over time (lunch vs dinner)",
-                           legend=dict(orientation="h", yanchor="bottom", y=1.02))
+        fig.update_layout(
+            title="Net sales over time (lunch vs dinner)",
+            legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
+        )
         st.plotly_chart(style_fig(fig, height=380), width="stretch")
 
     col_a, col_b = st.columns(2)
